@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1ilphf0vz&x=+=v62lkgz=b@bhar52is@p@qhqxif*+97sbn8l
 DEBUG = True
 
 MEDIA_URL = '/images/'
-MEDIA_ROOT = BASE_DIR / 'boats_app/images/'
+MEDIA_ROOT = BASE_DIR / 'images/'
 
 ALLOWED_HOSTS = []
 

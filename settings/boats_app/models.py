@@ -35,5 +35,13 @@ class BoatPic(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     img = models.ImageField(upload_to=path_and_rename)
 
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.img.storage, self.img.path
+        # Delete the model before the file
+        super(BoatPic, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
+
     def __str__(self):
         return str(self.id)
