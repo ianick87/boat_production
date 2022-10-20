@@ -14,7 +14,7 @@ def path_and_rename(instance, filename):
         # set filename as random string
         filename = '{}.{}'.format(uuid.uuid4().hex, ext)
     # return the whole path to the file
-    return os.path.join(upload_to, filename)
+    return  filename
 
 class Boat(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
